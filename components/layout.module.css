@@ -1,13 +1,19 @@
 .container {
-    max-width: 36rem;
+    max-width: 70rem;
     padding: 0 1rem;
     margin: 3rem auto 6rem;
+    font-family: 'Heebo';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
   }
   
   .header {
     display: flex;
-    flex-direction: column;
+    
     align-items: center;
+    justify-content: center;
   }
   
   .backToHome {

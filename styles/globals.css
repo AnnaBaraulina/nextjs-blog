@@ -2,10 +2,8 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
-    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  line-height: 1.6;
-  font-size: 18px;
+  font-family: 'Heebo', sans-serif;
+  color: #000000;
 }
 
 * {
@@ -24,4 +22,10 @@ a:hover {
 img {
   max-width: 100%;
   display: block;
+}
+
+@font-face {
+  font-family: 'Heebo';
+  src: url('/public/fonts/Heebo-Regular.ttf') format('ttf'),
+       url('/public/fonts/Heebo-Bold.ttf') format('ttf')
 }

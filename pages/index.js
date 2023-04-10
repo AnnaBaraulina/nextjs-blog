@@ -1,31 +1,65 @@
-import Head from 'next/head';
-import Layout, { siteTitle } from '../components/layout';
 import utilStyles from '../styles/utils.module.css';
+import styles from '../styles/Home.module.css'
 import { getSortedPostsData } from '../lib/posts';
 import Link from 'next/link';
 import Date from '../components/date';
+import { getSortedFilesData } from '../lib/files';
+import Image from 'next/image';
+import Head from 'next/head';
+
+export const siteTitle = 'Dima Baraulin';
 
 export async function getStaticProps() {
+  console.log('!')
   const allPostsData = getSortedPostsData();
+ {/* const allFilesData = getSortedFilesData();*/}
   return {
     props: {
       allPostsData,
+      /*allFilesData,*/
     },
   };
+  
 }
-
-export default function Home({ allPostsData }) {
+export default function Home({ allPostsData /*allFilesData */}) {
   return (
-    <Layout home>
+     <>
+      
       <Head>
-        <title>{siteTitle}</title>
+        <link rel="icon" href="/favicon.ico" />
+        <meta
+          name="description"
+          content="Learn how to build a personal website using Next.js"
+        />
+        <meta
+          property="og:image"
+          content={`https://og-image.vercel.app/${encodeURI(
+            siteTitle,
+          )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
+        />
+        <meta name="og:title" content={siteTitle} />
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <section className={utilStyles.headingMd}>
-        <p>Hello, i am Anna! I am a web developer and a French language instructor. You can reach out to me on <a href='https://www.linkedin.com/in/anna-baraulina-585895256/'>Linkedin</a></p>
-        <p>
-          (This is a sample website - you’ll be building a site like this on{' '}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-        </p>
+      <div className={layout.container}>
+      <header className={styles.header}>
+        <Link className={utilStyles.link} href='#'>Works</Link>
+        <Link className={utilStyles.link} href='#'>Blog</Link>
+        <Link className={utilStyles.link} href='#'>Contact</Link>
+      </header>
+      <section className={styles.content}>
+        <div className={styles.text}>
+          <h1 className={styles.textBold}>Hi, i am Dima, 3D motion artist. <br/> You can reach out to me on <a className={utilStyles.aLink} href='https://www.linkedin.com/in/dima-baraulin-6b05273b/'>Linkedin</a></h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+        <Image
+              priority
+              src="/images/profile.jpeg"
+              className={utilStyles.borderCircle}
+              height={250}
+              width={250}
+              alt=""
+            />
+        
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
@@ -33,6 +67,7 @@ export default function Home({ allPostsData }) {
           {allPostsData.map(({ id, date, title }) => (
            <li className={utilStyles.listItem} key={id}>
            <Link href={`/posts/${id}`}>{title}</Link>
+           
            <br />
            <small className={utilStyles.lightText}>
              <Date dateString={date} />
@@ -40,7 +75,22 @@ export default function Home({ allPostsData }) {
          </li>
           ))}
         </ul>
+        
+       {/* <ul className={utilStyles.list}>
+          {allFilesData.map(({ id, date, title }) => (
+           <li className={utilStyles.listItem} key={id}>
+           <Link href={`/files/${id}`}>{title}</Link>
+           <br />
+           <small className={utilStyles.lightText}>
+             <Date dateString={date} />
+           </small>
+         </li>
+          ))}
+          </ul>*/}
+
       </section>
-    </Layout>
+     
+      </div>
+      </>
   );
 }
