@@ -1,7 +1,6 @@
-{/*import { getAllFilesIds, getFilesData } from "../../lib/files";
+import { getAllFilesIds, getFilesData } from "../../lib/files";
 import utilStyles from '../../styles/utils.module.css';
 import { Date }from '../../components/date';
-
 export async function getStaticProps({ params }) {
     // Add the "await" keyword like this:
     const fileData = await getFilesData(params.id);
@@ -12,7 +11,6 @@ export async function getStaticProps({ params }) {
       },
     };
   }
-
   export async function getStaticPaths() {
     const paths = getAllFilesIds();
     return {
@@ -20,7 +18,6 @@ export async function getStaticProps({ params }) {
       fallback: false,
     };
   }
-
   export default function File({ fileData }) {
     return (
       <article>
@@ -30,4 +27,4 @@ export async function getStaticProps({ params }) {
       </article>
   
     );
-  }*/}
+  }

@@ -1,27 +1,29 @@
 import utilStyles from '../styles/utils.module.css';
 import styles from '../styles/Home.module.css'
-import { getSortedPostsData } from '../lib/posts';
-import Link from 'next/link';
-import Date from '../components/date';
+{/*import { getSortedPostsData } from '../lib/posts';*/}
 import { getSortedFilesData } from '../lib/files';
+import Link from 'next/link';
+{/*import Date from '../components/date';*/}
 import Image from 'next/image';
 import Head from 'next/head';
+import layout from '../components/layout.module.css'
+import Date from '../components/date';
 
 export const siteTitle = 'Dima Baraulin';
 
 export async function getStaticProps() {
-  console.log('!')
-  const allPostsData = getSortedPostsData();
- {/* const allFilesData = getSortedFilesData();*/}
+
+ /* const allPostsData = getSortedPostsData();*/
+  const allFilesData = getSortedFilesData();
   return {
     props: {
-      allPostsData,
-      /*allFilesData,*/
+      /*allPostsData,*/
+      allFilesData,
     },
   };
   
 }
-export default function Home({ allPostsData /*allFilesData */}) {
+export default function Home({  /*allPostsData*/ allFilesData }) {
   return (
      <>
       
@@ -62,21 +64,10 @@ export default function Home({ allPostsData /*allFilesData */}) {
         
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
-        <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, title }) => (
-           <li className={utilStyles.listItem} key={id}>
-           <Link href={`/posts/${id}`}>{title}</Link>
-           
-           <br />
-           <small className={utilStyles.lightText}>
-             <Date dateString={date} />
-           </small>
-         </li>
-          ))}
-        </ul>
+       <h2 className={utilStyles.headingLg}>Blog</h2>
+
         
-       {/* <ul className={utilStyles.list}>
+       <ul className={utilStyles.list}>
           {allFilesData.map(({ id, date, title }) => (
            <li className={utilStyles.listItem} key={id}>
            <Link href={`/files/${id}`}>{title}</Link>
@@ -86,7 +77,7 @@ export default function Home({ allPostsData /*allFilesData */}) {
            </small>
          </li>
           ))}
-          </ul>*/}
+          </ul>
 
       </section>
      
