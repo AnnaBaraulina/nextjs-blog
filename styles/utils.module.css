@@ -48,19 +48,22 @@
    
   }
   
- 
-
   .itemContainer {
     margin: 15px;
     background-color: white;
     max-width: 418px;
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
   
   .blogImage {
     width: 100px;
     height: 100px;
+  }
+
+  .blogPicture {
+    margin: 17px;
   }
 
   

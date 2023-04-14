@@ -1,15 +1,17 @@
 import utilStyles from '../styles/utils.module.css';
 import styles from '../styles/Home.module.css'
-{/*import { getSortedPostsData } from '../lib/posts';*/}
+
 import { getSortedFilesData } from '../lib/files';
 import Link from 'next/link';
-{/*import Date from '../components/date';*/}
+
 import Image from 'next/image';
 import Head from 'next/head';
 import layout from '../components/layout.module.css'
 import Date from '../components/date';
+
 import imagesData from '../data/data';
-import ImageFile from './files/[id]';
+
+
 
 export const siteTitle = 'Dima Baraulin';
 
@@ -26,13 +28,12 @@ export async function getStaticProps() {
   
   
 }
-export default function Home({  /*allPostsData*/ allFilesData }) {
+
+
+export default function Home({ allFilesData }) {
   const firstTwoFiles = allFilesData.slice(0, 2);
 
-
-
-  
-  return (
+ return (
      <>
       
       <Head>
@@ -77,19 +78,32 @@ export default function Home({  /*allPostsData*/ allFilesData }) {
 
       <div className={utilStyles.blogContainer}>
        <ul className={utilStyles.list}>
-          {firstTwoFiles.map(({ id, date, title, subtitle}) => (
-           
-           <li className={utilStyles.listItem} key={id}>
+       {firstTwoFiles.map(({ id, date, title, subtitle }, index) => {
+     
+        const image = imagesData.file.images[index];
+        return (
+          <li className={utilStyles.listItem} key={id}>
             <div className={utilStyles.itemContainer}>
-           <Link className={utilStyles.blogTitle} href={`/files/${id}`}>{title}</Link>
-           <br />
-           <div className={utilStyles.blogSubtitle}>{subtitle}</div>
-           <small className={utilStyles.lightText}>
-             <Date dateString={date} />
-           </small>
-           </div>
-         </li>
-          ))}
+              {/* Отображаем изображение */}
+              {image && (
+                <Image
+                  src={image.path}
+                  alt=''
+                  width={250}
+                  height={150}
+                  className={utilStyles.blogPicture}
+                />
+              )}
+        <Link className={utilStyles.blogTitle} href={`/files/${id}`}>{title}</Link>
+        <br />
+        <div className={utilStyles.blogSubtitle}>{subtitle}</div>
+        <small className={utilStyles.lightText}>
+          <Date dateString={date} />
+        </small>
+      </div>
+    </li>
+  );
+})}
           </ul>
         </div>
 
