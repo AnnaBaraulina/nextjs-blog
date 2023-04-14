@@ -8,6 +8,8 @@ import Image from 'next/image';
 import Head from 'next/head';
 import layout from '../components/layout.module.css'
 import Date from '../components/date';
+import imagesData from '../data/data';
+import ImageFile from './files/[id]';
 
 export const siteTitle = 'Dima Baraulin';
 
@@ -22,8 +24,14 @@ export async function getStaticProps() {
     },
   };
   
+  
 }
 export default function Home({  /*allPostsData*/ allFilesData }) {
+  const firstTwoFiles = allFilesData.slice(0, 2);
+
+
+
+  
   return (
      <>
       
@@ -47,6 +55,7 @@ export default function Home({  /*allPostsData*/ allFilesData }) {
         <Link className={utilStyles.link} href='#'>Works</Link>
         <Link className={utilStyles.link} href='#'>Blog</Link>
         <Link className={utilStyles.link} href='#'>Contact</Link>
+        <Link className={utilStyles.link} href='#'>About</Link>
       </header>
       <section className={styles.content}>
         <div className={styles.text}>
@@ -63,21 +72,26 @@ export default function Home({  /*allPostsData*/ allFilesData }) {
             />
         
       </section>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-       <h2 className={utilStyles.headingLg}>Blog</h2>
+      <section className={utilStyles.blog}>
+       <h2 className={utilStyles.headingBlog}>Recent posts</h2>
 
-        
+      <div className={utilStyles.blogContainer}>
        <ul className={utilStyles.list}>
-          {allFilesData.map(({ id, date, title }) => (
+          {firstTwoFiles.map(({ id, date, title, subtitle}) => (
+           
            <li className={utilStyles.listItem} key={id}>
-           <Link href={`/files/${id}`}>{title}</Link>
+            <div className={utilStyles.itemContainer}>
+           <Link className={utilStyles.blogTitle} href={`/files/${id}`}>{title}</Link>
            <br />
+           <div className={utilStyles.blogSubtitle}>{subtitle}</div>
            <small className={utilStyles.lightText}>
              <Date dateString={date} />
            </small>
+           </div>
          </li>
           ))}
           </ul>
+        </div>
 
       </section>
      

@@ -41,14 +41,32 @@
     list-style: none;
     padding: 0;
     margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    
+   
   }
   
-  .listItem {
-    margin: 0 0 1.25rem;
+ 
+
+  .itemContainer {
+    margin: 15px;
+    background-color: white;
+    max-width: 418px;
+    display: flex;
+    flex-direction: column;
   }
+  
+  .blogImage {
+    width: 100px;
+    height: 100px;
+  }
+
   
   .lightText {
     color: #666;
+    margin-left: 10px;
   }
 
   .link {
@@ -66,4 +84,39 @@
 
   .aLink {
     color: #000000;
+  }
+
+  .headingBlog {
+    font-family: 'Heebo';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 60px;
+    margin-left: 20px;
+  }
+
+  .blog {
+    background-color: #EDF7FA;
+    
+  }
+
+  .blogTitle {
+    font-family: 'Heebo';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 38px;
+    color: #21243D;
+    margin-left: 10px;
+  }
+
+  .blogSubtitle {
+    margin: 10px;
+  }
+
+  .fileContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 100px;
   }
