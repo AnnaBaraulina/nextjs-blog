@@ -3,6 +3,7 @@ import utilStyles from '../../styles/utils.module.css';
 import { Date }from '../../components/date';
 import imagesData from '../../data/data'
 import Image from "next/image";
+import Link from "next/link";
 
 export async function getStaticProps({ params }) {
     // Add the "await" keyword like this:
@@ -23,8 +24,6 @@ export async function getStaticProps({ params }) {
   }
 
 
-
-
   export default function File({ fileData }) {
   
    const image = imagesData.file.images.find(img => img.id === fileData.id)
@@ -38,7 +37,7 @@ export async function getStaticProps({ params }) {
           width={image.sizes[0]}
           height={image.sizes[1]}
         />
-      
+       <Link className={utilStyles.homeLink} href={'/'}>HOME PAGE</Link>
       </article>
   
     );

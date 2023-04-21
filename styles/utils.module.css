@@ -44,14 +44,22 @@
     padding: 0;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     
    
   }
+
+  .listItem {
+    width: 100%;
+    max-width: 400px;
+    flex: 1;
+    margin: 10px;
+  }
   
   .itemContainer {
-    margin: 15px;
-    background-color: white;
-    max-width: 418px;
+    justify-content: center;
+    background-color:white;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -118,8 +126,57 @@
   }
 
   .fileContainer {
+    max-width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 100px;
+    margin: auto;
+  }
+
+  .blogContainer {
+    display: flex;
+    flex-direction: column;
+    max-width: 60%;
+    margin: auto;
+    align-items: center;
+    background-color: #EDF7FA;
+    
+  }
+
+  .homeLink {
+    margin-top: 30px;
+    align-self: flex-start;
+    color: black;
+    font-weight: 600;
+
+  }
+
+  .cont {
+    margin: 30px;
+  }
+
+  .title {
+    font-family: 'Heebo';
+    font-style: normal;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .subtitle {
+    margin-bottom: 10px;
+  }
+
+  .linkBlog {
+    color: black;
+    font-family: 'Heebo';
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  .linkHome {
+    color: black;
+  }
+
+  .listItem {
+    background-color: #EDF7FA;
   }

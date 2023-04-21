@@ -4,7 +4,14 @@ body {
   margin: 0;
   font-family: 'Heebo', sans-serif;
   color: #000000;
+  
 }
+
+@font-face {
+  font-family: 'Heebo';
+  src: url('/public/fonts/Heebo-Black.ttf');
+}
+
 
 * {
   box-sizing: border-box;
@@ -24,8 +31,3 @@ img {
   display: block;
 }
 
-@font-face {
-  font-family: 'Heebo';
-  src: url('/public/fonts/Heebo-Regular.ttf') format('ttf'),
-       url('/public/fonts/Heebo-Bold.ttf') format('ttf')
-}

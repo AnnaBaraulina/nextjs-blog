@@ -17,25 +17,21 @@ export const siteTitle = 'Dima Baraulin';
 
 export async function getStaticProps() {
 
- /* const allPostsData = getSortedPostsData();*/
+
   const allFilesData = getSortedFilesData();
   return {
     props: {
-      /*allPostsData,*/
+    
       allFilesData,
     },
   };
-  
-  
 }
-
 
 export default function Home({ allFilesData }) {
   const firstTwoFiles = allFilesData.slice(0, 2);
 
  return (
      <>
-      
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -54,7 +50,7 @@ export default function Home({ allFilesData }) {
       <div className={layout.container}>
       <header className={styles.header}>
         <Link className={utilStyles.link} href='#'>Works</Link>
-        <Link className={utilStyles.link} href='#'>Blog</Link>
+        <Link className={utilStyles.link} href='/blog'>Blog</Link>
         <Link className={utilStyles.link} href='#'>Contact</Link>
         <Link className={utilStyles.link} href='#'>About</Link>
       </header>
@@ -84,7 +80,7 @@ export default function Home({ allFilesData }) {
         return (
           <li className={utilStyles.listItem} key={id}>
             <div className={utilStyles.itemContainer}>
-              {/* Отображаем изображение */}
+              
               {image && (
                 <Image
                   src={image.path}
