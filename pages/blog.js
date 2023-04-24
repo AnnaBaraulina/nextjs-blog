@@ -17,7 +17,9 @@ export default function Blog({ filesData }) {
 
     return (
         <>
+        
         <div className={styles.blogContainer}>
+        <h1 className={styles.blogHeading}>BLOG</h1>
         {filesData.map( ({id, title, subtitle}) => {
          
           return ( <>

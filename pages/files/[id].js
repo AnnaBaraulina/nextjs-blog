@@ -26,17 +26,13 @@ export async function getStaticProps({ params }) {
 
   export default function File({ fileData }) {
   
-   const image = imagesData.file.images.find(img => img.id === fileData.id)
+  
     return (
       <article className={utilStyles.fileContainer}>
         <h1 className={utilStyles.headingXl}>{fileData.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: fileData.contentHtml }} />
-        <Image
-          src={image.path}  
-          alt={fileData.title}
-          width={image.sizes[0]}
-          height={image.sizes[1]}
-        />
+        <img src={fileData.image} alt={fileData.title}/>
+ 
        <Link className={utilStyles.homeLink} href={'/'}>HOME PAGE</Link>
       </article>
   

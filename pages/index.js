@@ -72,16 +72,16 @@ export default function Home({ allFilesData }) {
       <section className={utilStyles.blog}>
        <h2 className={utilStyles.headingBlog}>Recent posts</h2>
 
-      <div className={utilStyles.blogContainer}>
+      <div>
        <ul className={utilStyles.list}>
-       {firstTwoFiles.map(({ id, date, title, subtitle }, index) => {
+       {firstTwoFiles.map(({ id, date, title, subtitle, image }) => { //удалила index из скобок
      
-        const image = imagesData.file.images[index];
+        {/*const image = imagesData.file.images[index];*/}
         return (
           <li className={utilStyles.listItem} key={id}>
             <div className={utilStyles.itemContainer}>
               
-              {image && (
+           { /*  {image && (
                 <Image
                   src={image.path}
                   alt=''
@@ -89,10 +89,11 @@ export default function Home({ allFilesData }) {
                   height={150}
                   className={utilStyles.blogPicture}
                 />
-              )}
+              )}*/}
         <Link className={utilStyles.blogTitle} href={`/files/${id}`}>{title}</Link>
         <br />
         <div className={utilStyles.blogSubtitle}>{subtitle}</div>
+        <img src={image} alt={title}/>
         <small className={utilStyles.lightText}>
           <Date dateString={date} />
         </small>
@@ -102,7 +103,7 @@ export default function Home({ allFilesData }) {
 })}
           </ul>
         </div>
-
+      <Link className={utilStyles.headingBlog} href={'/blog'}>View all</Link>
       </section>
      
       </div>
