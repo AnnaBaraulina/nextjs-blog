@@ -1,62 +1,60 @@
 .heading2Xl {
-    font-size: 2.5rem;
-    line-height: 1.2;
-    font-weight: 800;
-    letter-spacing: -0.05rem;
-    margin: 1rem 0;
-  }
-  
-  .headingXl {
-    font-size: 2rem;
-    line-height: 1.3;
-    font-weight: 800;
-    letter-spacing: -0.05rem;
-    margin: 1rem 0;
-  }
-  
-  .headingLg {
-    font-size: 1.5rem;
-    line-height: 1.4;
-    margin: 1rem 0;
-  }
-  
-  .headingMd {
-    font-size: 1.2rem;
-    line-height: 1.5;
-  }
-  
-  .borderCircle {
-    border-radius: 8888px;
-  }
-  
-  .colorInherit {
-    color: inherit;
-  }
-  
-  .padding1px {
-    padding-top: 1px;
-  }
-  
-  .list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    
-   
-  }
+  font-size: 2.5rem;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -0.05rem;
+  margin: 1rem 0;
+}
 
-  .listItem {
-    width: 100%;
-    max-width: 400px;
-    flex: 1;
-    margin: 10px;
-  }
-  
- /* .itemContainer {
+.headingXl {
+  font-size: 2rem;
+  line-height: 1.3;
+  font-weight: 800;
+  letter-spacing: -0.05rem;
+  margin: 1rem 0;
+}
+
+.headingLg {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  margin: 1rem 0;
+}
+
+.headingMd {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.borderCircle {
+  border-radius: 8888px;
+}
+
+.colorInherit {
+  color: inherit;
+}
+
+.padding1px {
+  padding-top: 1px;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.listItem {
+  width: 100%;
+  max-width: 400px;
+  flex: 1;
+  margin: 10px;
+}
+
+/* .itemContainer {
     justify-content: center;
     background-color:white;
     height: 100%;
@@ -65,180 +63,178 @@
     align-items: center;
   }*/
 
-  .linkPost {
-    color: inherit;
-    text-decoration: none;
-    cursor: pointer;
-  }
+.linkPost {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.linkPost:hover {
+  text-decoration: none;
+}
+
+.linkPost:focus,
+.linkPost:active {
+  outline: none;
+}
+
+.blogImage {
+  width: 100px;
+  height: 100px;
+}
+
+.blogPicture {
+  margin: 17px;
+}
+
+.lightText {
+  color: #666;
+  margin-left: 10px;
+}
+
+.link {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 29px;
+  margin-right: 65px;
+  color: #000000;
+}
+
+.link:last-of-type {
+  margin-right: 0;
+}
+
+.aLink {
+  color: #000000;
+}
+
+.headingBlog {
+  font-family: "Heebo";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 60px;
+  margin-left: 20px;
+  color: #000000;
+  opacity: 0.5;
+}
+
+.blogTitle {
+  font-family: "Heebo";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 38px;
+  color: #21243d;
+  margin-left: 10px;
+}
+
+.blogSubtitle {
+  margin: 10px;
+}
+
+.blogPic {
   
-  .linkPost:hover {
-    text-decoration: none;
-  }
-  
-  .linkPost:focus,
-  .linkPost:active {
-    outline: none;
-  }
-  
-  .blogImage {
-    width: 100px;
-    height: 100px;
-  }
+}
 
-  .blogPicture {
-    margin: 17px;
-  }
+.fileContainer {
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}
 
-  
-  .lightText {
-    color: #666;
-    margin-left: 10px;
-  }
+.blogContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Heebo";
+  max-width: 80%;
+}
+.blogHeading {
+  align-self: flex-start;
+  margin-bottom: 10%;
+}
 
-  .link {
-    font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 29px;
-    margin-right: 65px;
-    color: #000000;
-  }
+.homeLink {
+  margin-top: 30px;
+  align-self: flex-start;
+  color: black;
+  font-weight: 600;
+}
 
-  .link:last-of-type {
-    margin-right: 0;
-  }
+.cont {
+  margin-bottom: 7%;
+}
 
-  .aLink {
-    color: #000000;
-  }
+.title {
+  font-family: "Heebo";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 44px;
+  margin-bottom: 20px;
+}
 
-  .headingBlog {
-    font-family: 'Heebo';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 22px;
-    line-height: 60px;
-    margin-left: 20px;
-    color: #000000;
-    opacity: 0.5;
-  }
+.subtitle {
+  margin-bottom: 10px;
+}
 
-  .blog {
-    background-color: #EDF7FA;
-    
-  }
+.linkBlog {
+  color: black;
+  font-family: "Heebo";
+  font-style: normal;
+  font-weight: 600;
+}
 
-  .blogTitle {
-    font-family: 'Heebo';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 26px;
-    line-height: 38px;
-    color: #21243D;
-    margin-left: 10px;
-  }
+.linkHome {
+  color: black;
+}
 
-  .blogSubtitle {
-    margin: 10px;
-  }
+.containerAbout {
+  max-width: 70rem;
+  padding: 0 1rem;
+  margin: 3rem auto 6rem;
+  font-family: "Heebo";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
 
-  .fileContainer {
-    max-width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: auto;
-  }
+.experienceLogo {
+  width: 25px;
+  height: 25px;
+  margin-right: 15px;
+}
 
-  .blogContainer {
-    display: flex;
-    flex-direction: column;
-    max-width: 80%;
-    margin: 20%;
-    align-items: center;
-    font-family: 'Heebo';
-    
-    
-    
-  }
-  .blogHeading {
-    align-self: flex-start;
-    margin-bottom: 10%;
-  }
+.experienceContainer {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
 
-  .homeLink {
-    margin-top: 30px;
-    align-self: flex-start;
-    color: black;
-    font-weight: 600;
+.experience {
+}
+.company {
+  margin: 0;
+}
 
-  }
+.experienceTitle {
+  margin-bottom: 50px;
+}
+.experienceName {
+  margin-bottom: 25px;
+}
 
-  .cont {
-   margin-bottom: 7%;
-  }
+.contactsContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
 
-  .title {
-    font-family: 'Heebo';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 30px;
-    line-height: 44px;
-    margin-bottom: 20px;
-  }
-
-  .subtitle {
-    margin-bottom: 10px;
-  }
-
-  .linkBlog {
-    color: black;
-    font-family: 'Heebo';
-    font-style: normal;
-    font-weight: 600;
-  }
-
-  .linkHome {
-    color: black;
-  }
-
-  .listItem {
-    background-color: #EDF7FA;
-  }
-
-  .containerAbout {
-    max-width: 70rem;
-    padding: 0 1rem;
-    margin: 3rem auto 6rem;
-    font-family: 'Heebo';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-  }
-
-  .experienceLogo {
-    width: 25px;
-    height: 25px;
-    margin-right: 15px;
-  }
-
-  .experienceContainer {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 20px;
-  }
- 
-  .experience {
-
-  }
-  .company {
-    margin: 0;
-  }
-
-  .experienceTitle {
-    margin-bottom: 50px;
-  }
-  .experienceName {
-    margin-bottom: 25px;
-  }
+.contact {
+  margin: 0;
+}

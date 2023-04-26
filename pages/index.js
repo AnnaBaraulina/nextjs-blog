@@ -55,7 +55,7 @@ export default function Home({ allFilesData }) {
             About
           </Link>
         </header>
-        <section className={styles.content}>
+        <section className={styles.content} style={{ background: `url('/images/header.jpeg')`, backgroundSize: 'cover' }}>
           <div className={styles.text}>
             <h1 className={styles.textBold}>
               Hi, i am Dima, 3D motion artist. <br /> You can reach out to me on{" "}
@@ -66,7 +66,7 @@ export default function Home({ allFilesData }) {
                 Linkedin
               </a>
             </h1>
-            <p>
+            <p className={styles.description}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -76,14 +76,7 @@ export default function Home({ allFilesData }) {
               sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
           </div>
-          <Image
-            priority
-            src="/images/profile.jpeg"
-            className={utilStyles.borderCircle}
-            height={250}
-            width={250}
-            alt=""
-          />
+  
         </section>
         <section className={utilStyles.blog}>
           <h2 className={utilStyles.headingBlog}>Recent posts</h2>
@@ -92,7 +85,12 @@ export default function Home({ allFilesData }) {
             <ul className={utilStyles.list}>
               {firstTwoFiles.map(({ id, date, title, subtitle, image }) => {
                 return (
-                  <Link className={utilStyles.linkPost} href={`/posts/${id}`} passHref>
+                  <Link
+                    key={id}
+                    className={utilStyles.linkPost}
+                    href={`/posts/${id}`}
+                    passHref
+                  >
                     <li className={utilStyles.listItem} key={id}>
                       <div className={utilStyles.itemContainer}>
                         <h1 className={utilStyles.blogTitle}>{title}</h1>
@@ -100,7 +98,7 @@ export default function Home({ allFilesData }) {
                         <div className={utilStyles.blogSubtitle}>
                           {subtitle}
                         </div>
-                        <img src={image} alt={title} />
+                        <img src={image} alt={title} className={utilStyles.blogPic}/>
                         <small className={utilStyles.lightText}>
                           <Date dateString={date} />
                         </small>

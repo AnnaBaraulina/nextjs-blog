@@ -18,6 +18,7 @@ export async function getStaticProps() {
 export default function Blog({ filesData }) {
   return (
     <>
+    <div className={utilStyles.containerAbout}>
       <header className={styles.header}>
         <Link className={utilStyles.link} href="#">
           Works
@@ -51,6 +52,7 @@ export default function Blog({ filesData }) {
         <Link className={utilStyles.linkHome} href={`/`}>
           HOME PAGE
         </Link>
+      </div>
       </div>
     </>
   );

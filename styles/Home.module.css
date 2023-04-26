@@ -2,7 +2,7 @@
 .header {
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 150px;
+  margin-bottom: 70px;
 
 }
 
@@ -21,6 +21,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  background-image: '/images/header.jpeg';
+  background-size: cover; 
   
 }
 .text {
@@ -33,6 +36,11 @@
   font-weight: 700;
   font-size: 44px;
   line-height: 60px;
+  margin-left: 20px;
+}
+
+.description {
+  margin-left: 20px;
 }
 
 

@@ -13,10 +13,10 @@ export default function About() {
           <Link className={utilStyles.link} href="/blog">
             Blog
           </Link>
-          <Link className={utilStyles.link} href="#">
+          <Link className={utilStyles.link} href="/contact">
             Contact
           </Link>
-          <Link className={utilStyles.link} href="#">
+          <Link className={utilStyles.link} href="/about">
             About
           </Link>
         </header>
