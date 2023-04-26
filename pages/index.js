@@ -48,10 +48,10 @@ export default function Home({ allFilesData }) {
           <Link className={utilStyles.link} href="/blog">
             Blog
           </Link>
-          <Link className={utilStyles.link} href="#">
+          <Link className={utilStyles.link} href="/contact">
             Contact
           </Link>
-          <Link className={utilStyles.link} href="#">
+          <Link className={utilStyles.link} href="/about">
             About
           </Link>
         </header>
@@ -92,22 +92,21 @@ export default function Home({ allFilesData }) {
             <ul className={utilStyles.list}>
               {firstTwoFiles.map(({ id, date, title, subtitle, image }) => {
                 return (
-                  <li className={utilStyles.listItem} key={id}>
-                    <div className={utilStyles.itemContainer}>
-                      <Link
-                        className={utilStyles.blogTitle}
-                        href={`/posts/${id}`}
-                      >
-                        {title}
-                      </Link>
-                      <br />
-                      <div className={utilStyles.blogSubtitle}>{subtitle}</div>
-                      <img src={image} alt={title} />
-                      <small className={utilStyles.lightText}>
-                        <Date dateString={date} />
-                      </small>
-                    </div>
-                  </li>
+                  <Link className={utilStyles.linkPost} href={`/posts/${id}`} passHref>
+                    <li className={utilStyles.listItem} key={id}>
+                      <div className={utilStyles.itemContainer}>
+                        <h1 className={utilStyles.blogTitle}>{title}</h1>
+                        <br />
+                        <div className={utilStyles.blogSubtitle}>
+                          {subtitle}
+                        </div>
+                        <img src={image} alt={title} />
+                        <small className={utilStyles.lightText}>
+                          <Date dateString={date} />
+                        </small>
+                      </div>
+                    </li>
+                  </Link>
                 );
               })}
             </ul>

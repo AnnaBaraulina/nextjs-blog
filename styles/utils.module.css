@@ -64,6 +64,21 @@
     flex-direction: column;
     align-items: center;
   }*/
+
+  .linkPost {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .linkPost:hover {
+    text-decoration: none;
+  }
+  
+  .linkPost:focus,
+  .linkPost:active {
+    outline: none;
+  }
   
   .blogImage {
     width: 100px;
@@ -189,4 +204,41 @@
 
   .listItem {
     background-color: #EDF7FA;
+  }
+
+  .containerAbout {
+    max-width: 70rem;
+    padding: 0 1rem;
+    margin: 3rem auto 6rem;
+    font-family: 'Heebo';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .experienceLogo {
+    width: 25px;
+    height: 25px;
+    margin-right: 15px;
+  }
+
+  .experienceContainer {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+ 
+  .experience {
+
+  }
+  .company {
+    margin: 0;
+  }
+
+  .experienceTitle {
+    margin-bottom: 50px;
+  }
+  .experienceName {
+    margin-bottom: 25px;
   }

@@ -1,6 +1,8 @@
 import { getSortedFilesData } from "../lib/posts";
 import { getFilesData } from "../lib/posts";
-import styles from "../styles/utils.module.css";
+import utilStyles from "../styles/utils.module.css";
+import styles from "../styles/Home.module.css";
+
 import Link from "next/link";
 
 export async function getStaticProps() {
@@ -16,23 +18,37 @@ export async function getStaticProps() {
 export default function Blog({ filesData }) {
   return (
     <>
-      <div className={styles.blogContainer}>
-        <h1 className={styles.blogHeading}>BLOG</h1>
+      <header className={styles.header}>
+        <Link className={utilStyles.link} href="#">
+          Works
+        </Link>
+        <Link className={utilStyles.link} href="/blog">
+          Blog
+        </Link>
+        <Link className={utilStyles.link} href="/contact">
+          Contact
+        </Link>
+        <Link className={utilStyles.link} href="/about">
+          About
+        </Link>
+      </header>
+      <div className={utilStyles.blogContainer}>
+        <h1 className={utilStyles.blogHeading}>BLOG</h1>
         {filesData.map(({ id, title, subtitle }) => {
           return (
             <>
-              <div className={styles.cont}>
-                <div className={styles.title}>{title}</div>
-                <div className={styles.subtitle}>{subtitle}</div>
+              <div className={utilStyles.cont}>
+                <div className={utilStyles.title}>{title}</div>
+                <div className={utilStyles.subtitle}>{subtitle}</div>
 
-                <Link className={styles.linkBlog} href={`/posts/${id}`}>
+                <Link className={utilStyles.linkBlog} href={`/posts/${id}`}>
                   read more
                 </Link>
               </div>
             </>
           );
         })}
-        <Link className={styles.linkHome} href={`/`}>
+        <Link className={utilStyles.linkHome} href={`/`}>
           HOME PAGE
         </Link>
       </div>
