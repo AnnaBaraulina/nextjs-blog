@@ -1,5 +1,9 @@
 import utilStyles from "../styles/utils.module.css";
 import styles from "../styles/Home.module.css";
+import { motion, useScroll, useTransform } from "framer-motion";
+import StaggerContainer, {
+  fadeInVariants,
+} from "../components/StraggerContainer";
 
 import { getSortedFilesData } from "../lib/posts";
 import Link from "next/link";
@@ -21,6 +25,12 @@ export async function getStaticProps() {
 }
 
 export default function Home({ allFilesData }) {
+  const { scrollYProgress } = useScroll({
+    offset: ["0hv", "50vh"],
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], [0, -50]);
+
   const firstTwoFiles = allFilesData.slice(0, 2);
 
   return (
@@ -55,28 +65,38 @@ export default function Home({ allFilesData }) {
             About
           </Link>
         </header>
-        <section className={styles.content} style={{ background: `url('/images/header.jpeg')`, backgroundSize: 'cover' }}>
-          <div className={styles.text}>
-            <h1 className={styles.textBold}>
-              Hi, i am Dima, 3D motion artist. <br /> You can reach out to me on{" "}
-              <a
-                className={utilStyles.aLink}
-                href="https://www.linkedin.com/in/dima-baraulin-6b05273b/"
-              >
-                Linkedin
-              </a>
-            </h1>
-            <p className={styles.description}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-          </div>
-  
+        <section
+          className={`${styles.content} relative transform-gpu`}
+          style={{
+            background: `url('/images/header.jpeg')`,
+            backgroundSize: "cover",
+          }}
+        >
+          <StaggerContainer delayChildren={0.5}>
+            <motion.div variants={fadeInVariants} >
+            <div className={styles.text}>
+              <h1 className={styles.textBold}>
+                Hi, i am Dima, 3D motion artist. <br /> You can reach out to me
+                on
+                <a
+                  className={utilStyles.aLink}
+                  href="https://www.linkedin.com/in/dima-baraulin-6b05273b/"
+                >
+                  Linkedin
+                </a>
+              </h1>
+              <p className={styles.description}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+            </motion.div>
+          </StaggerContainer>
         </section>
         <section className={utilStyles.blog}>
           <h2 className={utilStyles.headingBlog}>Recent posts</h2>
@@ -98,7 +118,11 @@ export default function Home({ allFilesData }) {
                         <div className={utilStyles.blogSubtitle}>
                           {subtitle}
                         </div>
-                        <img src={image} alt={title} className={utilStyles.blogPic}/>
+                        <img
+                          src={image}
+                          alt={title}
+                          className={utilStyles.blogPic}
+                        />
                         <small className={utilStyles.lightText}>
                           <Date dateString={date} />
                         </small>
