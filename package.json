@@ -8,6 +8,8 @@
   "dependencies": {
     "clsx": "^1.2.1",
     "date-fns": "^2.29.3",
+    "embla-carousel": "^8.0.0-rc01",
+    "embla-carousel-react": "^8.0.0-rc01",
     "framer-motion": "^10.12.4",
     "gray-matter": "^4.0.3",
     "next": "latest",

@@ -134,8 +134,10 @@
   margin: 10px;
 }
 
-.blogPic {
-  
+.blog {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x: scroll;
 }
 
 .fileContainer {

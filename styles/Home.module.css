@@ -1,9 +1,7 @@
-
 .header {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 70px;
-
 }
 
 .link {
@@ -21,17 +19,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  background-image: '/images/header.jpeg';
-  background-size: cover; 
-  
+  background-image: "/images/header.jpeg";
+  background-size: cover;
 }
 .text {
   max-width: 60%;
 }
 
 .textBold {
-  font-family: 'Heebo';
+  font-family: "Heebo";
   font-style: normal;
   font-weight: 700;
   font-size: 44px;
@@ -43,4 +39,52 @@
   margin-left: 20px;
 }
 
+.embla {
+  position: relative;
+}
 
+.embla__viewport {
+  width: 100%;
+  display: flex;
+}
+
+.embla__container {
+  display: flex;
+  will-change: transform;
+  flex-wrap: nowrap;
+  scroll-behavior: smooth;
+}
+
+.embla__slide {
+  flex: 0 0 100%;
+  flex-shrink: 0;
+  max-width: 400px;
+}
+
+.embla__slide__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.embla__slide__inner img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.embla__button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.embla__buttonPrev {
+  left: 0;
+}
+
+.embla__buttonNext {
+  right: 0;
+}
