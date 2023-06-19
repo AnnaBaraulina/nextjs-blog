@@ -1,12 +1,16 @@
 import Link from "next/link";
-import utilStyles from "../styles/utils.module.css";
-import styles from "../styles/Home.module.css";
+import styles from '../styles/About.module.css';
+import homeStyles from "../styles/Home.module.css";
+import utilStyles from '../styles/utils.module.css';
+
+
+
 
 export default function About() {
   return (
     <>
-      <div className={utilStyles.containerAbout}>
-        <header className={styles.header}>
+      <div className={styles.container}>
+        <header className={utilStyles.header}>
           <Link className={utilStyles.link} href="#">
             Works
           </Link>
@@ -21,8 +25,8 @@ export default function About() {
           </Link>
         </header>
         <div className="">
-          <h1 className={utilStyles.experienceTitle}>Dima Baraulin</h1>
-          <h2 className={utilStyles.experienceName}>Summary</h2>
+          <h1 className={styles.about}>Dima Baraulin</h1>
+          <h2 className={styles.summary}>Summary</h2>
           <p>
             I am a seasoned 3D Designer with 15+ years of experience <br />
             and a co-founder of two design studios, WRS.design and Endless Work.
@@ -42,56 +46,56 @@ export default function About() {
             <br />
             am a strong communicator and leader.
           </p>
-          <h2 className={utilStyles.experienceName}>Experience</h2>
-          <div className={utilStyles.experienceContainer}>
+          <h2 className={styles.summary}>Experience</h2>
+          <div className={styles.experienceContainer}>
             <img
-              className={utilStyles.experienceLogo}
+              className={styles.logo}
               src={"/images/endless.png"}
             ></img>
-            <div className={utilStyles.experience}>
-              <p className={utilStyles.company}>Co-founder & Head of production</p>
-              <p className={utilStyles.company}>Endless Work</p>
-              <p className={utilStyles.company}>Jan 2022 - Present</p>
+            <div className={styles.experience}>
+              <p className={styles.info}>Co-founder & Head of production</p>
+              <p className={styles.info}>Endless Work</p>
+              <p className={styles.info}>Jan 2022 - Present</p>
             </div>
           
           </div>
-          <div className={utilStyles.experienceContainer}>
+          <div className={styles.experienceContainer}>
             <img
-              className={utilStyles.experienceLogo}
+              className={styles.logo}
               src={"/images/wrs.png"}
             ></img>
-            <div className={utilStyles.experience}>
-              <p className={utilStyles.company}>Co-founder & Motion Director</p>
-              <p className={utilStyles.company}>WRS Design</p>
-              <p className={utilStyles.company}>Jan 2013 - Present</p>
+            <div className={styles.experience}>
+              <p className={styles.info}>Co-founder & Motion Director</p>
+              <p className={styles.info}>WRS Design</p>
+              <p className={styles.info}>Jan 2013 - Present</p>
             </div>
           
           </div>
-          <div className={utilStyles.experienceContainer}>
+          <div className={styles.experienceContainer}>
             <img
-              className={utilStyles.experienceLogo}
+              className={styles.logo}
               src={"/images/circle.png"}
             ></img>
-            <div className={utilStyles.experience}>
-              <p className={utilStyles.company}>3D Designer</p>
-              <p className={utilStyles.company}>COLORS AND THE KIDS</p>
-              <p className={utilStyles.company}>Jan 2015-2015</p>
+            <div className={styles.experience}>
+              <p className={styles.info}>3D Designer</p>
+              <p className={styles.info}>COLORS AND THE KIDS</p>
+              <p className={styles.info}>Jan 2015-2015</p>
             </div>
           
           </div>
-          <div className={utilStyles.experienceContainer}>
+          <div className={styles.experienceContainer}>
             <img
-              className={utilStyles.experienceLogo}
+              className={styles.logo}
               src={"/images/circle.png"}
             ></img>
-            <div className={utilStyles.experience}>
-              <p className={utilStyles.company}>Freelance 3D Artist</p>
-              <p className={utilStyles.company}>Freelance</p>
-              <p className={utilStyles.company}>2005 - 2015</p>
+            <div className={styles.experience}>
+              <p className={styles.info}>Freelance 3D Artist</p>
+              <p className={styles.info}>Freelance</p>
+              <p className={styles.info}>2005 - 2015</p>
             </div>
           
           </div>
-          <h2 className={utilStyles.experienceName}>Education</h2>
+          <h2 className={styles.summary}>Education</h2>
           <div>
             <p>Moscow Institute of Electronics and Mathematics
             <br/>

@@ -37,37 +37,6 @@
   padding-top: 1px;
 }
 
-.list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.listItem {
-  width: 100%;
-  max-width: 400px;
-  flex: 1;
-  margin: 10px;
-}
-
-/* .itemContainer {
-    justify-content: center;
-    background-color:white;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }*/
-
-.linkPost {
-  color: inherit;
-  text-decoration: none;
-  cursor: pointer;
-}
 
 .linkPost:hover {
   text-decoration: none;
@@ -101,143 +70,12 @@
   color: #000000;
 }
 
+.header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 70px;
+}
+
 .link:last-of-type {
   margin-right: 0;
-}
-
-.aLink {
-  color: #000000;
-}
-
-.headingBlog {
-  font-family: "Heebo";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 22px;
-  line-height: 60px;
-  margin-left: 20px;
-  color: #000000;
-  opacity: 0.5;
-}
-
-.blogTitle {
-  font-family: "Heebo";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 26px;
-  line-height: 38px;
-  color: #21243d;
-  margin: 0;
-  
-}
-
-.blogSubtitle {
-  margin: 10px;
-}
-
-.blog {
-  display: flex;
-  flex-wrap: wrap;
-  overflow-x: scroll;
-}
-
-.fileContainer {
-  max-width: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: auto;
-}
-
-.blogContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: "Heebo";
-  max-width: 80%;
-}
-.blogHeading {
-  align-self: flex-start;
-  margin-bottom: 10%;
-}
-
-.homeLink {
-  margin-top: 30px;
-  align-self: flex-start;
-  color: black;
-  font-weight: 600;
-}
-
-.cont {
-  margin-bottom: 7%;
-}
-
-.title {
-  font-family: "Heebo";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 30px;
-  line-height: 44px;
-  margin-bottom: 20px;
-}
-
-.subtitle {
-  margin-bottom: 10px;
-}
-
-.linkBlog {
-  color: black;
-  font-family: "Heebo";
-  font-style: normal;
-  font-weight: 600;
-}
-
-.linkHome {
-  color: black;
-}
-
-.containerAbout {
-  max-width: 70rem;
-  padding: 0 1rem;
-  margin: 3rem auto 6rem;
-  font-family: "Heebo";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-}
-
-.experienceLogo {
-  width: 25px;
-  height: 25px;
-  margin-right: 15px;
-}
-
-.experienceContainer {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 20px;
-}
-
-.experience {
-}
-.company {
-  margin: 0;
-}
-
-.experienceTitle {
-  margin-bottom: 50px;
-}
-.experienceName {
-  margin-bottom: 25px;
-}
-
-.contactsContainer {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.contact {
-  margin: 0;
 }

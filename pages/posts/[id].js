@@ -1,6 +1,6 @@
 import { getAllFilesIds, getFilesData } from "../../lib/posts";
 import utilStyles from "../../styles/utils.module.css";
-import { Date } from "../../components/date";
+import styles from '../../styles/File.module.css';
 
 import Link from "next/link";
 
@@ -24,12 +24,12 @@ export async function getStaticPaths() {
 
 export default function File({ fileData }) {
   return (
-    <article className={utilStyles.fileContainer}>
+    <article className={styles.container}>
       <h1 className={utilStyles.headingXl}>{fileData.title}</h1>
       <div dangerouslySetInnerHTML={{ __html: fileData.contentHtml }} />
       <img src={fileData.image} alt={fileData.title} />
 
-      <Link className={utilStyles.homeLink} href={"/"}>
+      <Link className={styles.link} href={"/"}>
         HOME PAGE
       </Link>
     </article>

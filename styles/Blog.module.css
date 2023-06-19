@@ -1,0 +1,53 @@
+.container {
+  max-width: 70rem;
+  padding: 0 1rem;
+  margin: 3rem auto 6rem;
+  font-family: "Heebo";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.item {
+  
+  margin-bottom: 50px;
+}
+
+.containerItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Heebo";
+  max-width: 80%;
+}
+
+.heading {
+  align-self: flex-start;
+  margin-bottom: 10%;
+}
+
+.title {
+  font-family: "Heebo";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 44px;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  margin-bottom: 10px;
+}
+
+.linkBlog {
+  color: black;
+  font-family: "Heebo";
+  font-style: normal;
+  font-weight: 600;
+  margin-bottom: 70px;
+}
+
+.linkHome {
+  color: black;
+}

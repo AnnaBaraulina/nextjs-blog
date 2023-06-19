@@ -8,10 +8,11 @@ import useEmblaCarousel from "embla-carousel-react";
 import { useRef, useEffect } from "react";
 
 import { getSortedFilesData } from "../lib/posts";
+import { getSortedWorksData } from "../lib/works";
 import Link from "next/link";
 import Head from "next/head";
 import layout from "../components/layout.module.css";
-import Date from "../components/date";
+
 import ArrLeft from "../public/images/arr_left.png";
 import ArrRight from "../public/images/arr_right.png";
 
@@ -19,9 +20,11 @@ export const siteTitle = "Dima Baraulin";
 
 export async function getStaticProps() {
   const allFilesData = getSortedFilesData();
+  const allWorksData = getSortedWorksData();
   return {
     props: {
       allFilesData,
+      allWorksData,
     },
   };
 }
@@ -31,7 +34,6 @@ function BlogCarousel({ allFilesData }) {
   const { embla, scrollNext, scrollPrev } = useEmblaCarousel({ loop: true });
 
   useEffect(() => {
-    console.log(carouselRef.current);
     if (!embla) return;
     const onResize = () => {
       embla.reInit();
@@ -44,32 +46,25 @@ function BlogCarousel({ allFilesData }) {
     <div className={styles.embla}>
       <div className={styles.embla__viewport} ref={carouselRef} tabIndex="0">
         <div className={styles.embla__container}>
-          {allFilesData.map(({ id, date, title, subtitle, image }) => (
+          {allFilesData.map(({ id, title, subtitle, image }) => (
             <motion.div
               className={styles.embla__slide}
               key={id}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Link
-                className={utilStyles.linkPost}
-                href={`/posts/${id}`}
-                
-              >
+              <Link className={styles.linkPost} href={`/posts/${id}`}>
                 <div className={styles.embla__slide__inner}>
-                  <h1 className={utilStyles.blogTitle}>{title}</h1>
+                  <h1 className={styles.titleCarousel}>{title}</h1>
                   <br />
-                  <div className={utilStyles.blogSubtitle}>{subtitle}</div>
-                  <img src={image} alt={title} className={utilStyles.blogPic}></img>
-                  <small className={utilStyles.lightText}>
-                    <Date dateString={date} />
-                  </small>
+                  <div className={styles.subtitleCarousel}>{subtitle}</div>
+                  <img src={image} alt={title} className=""></img>
                 </div>
               </Link>
             </motion.div>
           ))}
         </div>
-       {/* <button
+        {/* <button
           className={`${styles.embla__buttonPrev} ${styles.embla__button}`}
           onClick={scrollPrev}
         >
@@ -86,7 +81,7 @@ function BlogCarousel({ allFilesData }) {
   );
 }
 
-export default function Home({ allFilesData }) {
+export default function Home({ allFilesData, allWorksData }) {
   const { scrollYProgress } = useScroll({
     offset: ["0hv", "50vh"],
   });
@@ -113,7 +108,7 @@ export default function Home({ allFilesData }) {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <div className={layout.container}>
-        <header className={styles.header}>
+        <header className={utilStyles.header}>
           <Link className={utilStyles.link} href="#">
             Works
           </Link>
@@ -141,7 +136,7 @@ export default function Home({ allFilesData }) {
                   Hi, i am Dima, 3D motion artist. <br /> You can reach out to
                   me on
                   <a
-                    className={utilStyles.aLink}
+                    className={styles.aLink}
                     href="https://www.linkedin.com/in/dima-baraulin-6b05273b/"
                   >
                     Linkedin
@@ -161,12 +156,38 @@ export default function Home({ allFilesData }) {
             </motion.div>
           </StaggerContainer>
         </section>
-        <section className={utilStyles.blog}>
-          <h2 className={utilStyles.headingBlog}>Recent posts</h2>
+        <section className={styles.blog}>
+          <h2 className={styles.headingBlog}>recent posts</h2>
           <BlogCarousel allFilesData={allFilesData} />
-          <Link className={utilStyles.headingBlog} href={"/blog"}>
-            View all
+          <Link className={styles.headingBlog} href={"/blog"}>
+            view all
           </Link>
+        </section>
+        <section className={styles.works}>
+          <h2 className={styles.headingBlog}>some of our amazing projects</h2>
+          <div className={styles.worksContainer}>
+            {allWorksData.map(({ id, title, video }) => {
+              return (
+                <Link
+                  key={id}
+                  className={styles.workPost}
+                  href={`/works/${id}`}
+                >
+                  <h1 className={styles.projectName}>{title}</h1>
+                  <br />
+
+                  <div className={styles.videoContainer}>
+                    <iframe
+                      src={video}
+                      width="640"
+                      height="360"
+                      allow="autoplay; fullscreen; picture-in-picture"
+                    ></iframe>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
         </section>
       </div>
     </>
