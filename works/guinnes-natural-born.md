@@ -1,6 +1,6 @@
 ---
 title: 'GUINNES NATURAL BORN'
-video: 'https://player.vimeo.com/video/210793173'
+video: 'https://player.vimeo.com/video/115360836'
 date: '2023-09-06'
 ---
 

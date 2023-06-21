@@ -31,7 +31,7 @@ export async function getStaticProps() {
 
 function BlogCarousel({ allFilesData }) {
   const carouselRef = useRef(null);
-  const { embla, scrollNext, scrollPrev } = useEmblaCarousel({ loop: true });
+  const { embla } = useEmblaCarousel({ loop: true });
 
   useEffect(() => {
     if (!embla) return;
@@ -58,24 +58,61 @@ function BlogCarousel({ allFilesData }) {
                   <h1 className={styles.titleCarousel}>{title}</h1>
                   <br />
                   <div className={styles.subtitleCarousel}>{subtitle}</div>
-                  <img src={image} alt={title} className=""></img>
+                  <img
+                    src={image}
+                    alt={title}
+                    className={styles.embla__image}
+                  ></img>
                 </div>
               </Link>
             </motion.div>
           ))}
         </div>
-        {/* <button
-          className={`${styles.embla__buttonPrev} ${styles.embla__button}`}
-          onClick={scrollPrev}
-        >
-          Prev
-        </button>
-        <button
-          className={`${styles.embla__buttonNext} ${styles.embla__button}`}
-          onClick={scrollNext}
-        >
-          Next
-          </button>*/}
+      </div>
+    </div>
+  );
+}
+
+function WorkCarousel({ allWorksData }) {
+  const carouselRef = useRef(null);
+  const { embla } = useEmblaCarousel({ loop: true });
+
+  useEffect(() => {
+    if (!embla) return;
+    const onResize = () => {
+      embla.reInit();
+    };
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, [embla]);
+
+  return (
+    <div className={styles.embla}>
+      <div className={styles.embla__viewport} ref={carouselRef} tabIndex="0">
+        <div className={styles.embla__container}>
+          {allWorksData.map(({ id, title, video }) => (
+            <motion.div
+              className={styles.embla__slideWork}
+              key={id}
+              
+              whileTap={{ scale: 0.95 }}
+            >
+              <Link key={id} className={styles.workPost} href={`/works/${id}`}>
+                <div className={styles.emblaWork__slide__inner}>
+                  <div className={styles.videoContainer}>
+                    <h1 className={styles.projectName}>{title}</h1>
+                    <iframe
+                      src={video}
+                      allow="autoplay; fullscreen; picture-in-picture"
+                      width="640"
+                      height="360"
+                    ></iframe>
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -87,8 +124,6 @@ export default function Home({ allFilesData, allWorksData }) {
   });
 
   const y = useTransform(scrollYProgress, [0, 1], [0, -50]);
-
-  const firstTwoFiles = allFilesData.slice(0, 2);
 
   return (
     <>
@@ -163,31 +198,9 @@ export default function Home({ allFilesData, allWorksData }) {
             view all
           </Link>
         </section>
-        <section className={styles.works}>
+        <section className={styles.works} style={{ overflowX: 'scroll'} }>
           <h2 className={styles.headingBlog}>some of our amazing projects</h2>
-          <div className={styles.worksContainer}>
-            {allWorksData.map(({ id, title, video }) => {
-              return (
-                <Link
-                  key={id}
-                  className={styles.workPost}
-                  href={`/works/${id}`}
-                >
-                  <h1 className={styles.projectName}>{title}</h1>
-                  <br />
-
-                  <div className={styles.videoContainer}>
-                    <iframe
-                      src={video}
-                      width="640"
-                      height="360"
-                      allow="autoplay; fullscreen; picture-in-picture"
-                    ></iframe>
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
+          <WorkCarousel allWorksData={allWorksData} />
         </section>
       </div>
     </>

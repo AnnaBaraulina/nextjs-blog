@@ -1,6 +1,6 @@
 ---
 title: 'REDUCED MUSEUM'
-video: 'https://vimeo.com/258773387'
+video: 'https://player.vimeo.com/video/258773387'
 date: '2023-11-06'
 ---
 
