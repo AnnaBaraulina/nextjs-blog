@@ -13,9 +13,6 @@ import Link from "next/link";
 import Head from "next/head";
 import layout from "../components/layout.module.css";
 
-import ArrLeft from "../public/images/arr_left.png";
-import ArrRight from "../public/images/arr_right.png";
-
 export const siteTitle = "Dima Baraulin";
 
 export async function getStaticProps() {
@@ -43,7 +40,7 @@ function BlogCarousel({ allFilesData }) {
   }, [embla]);
 
   return (
-    <div className={styles.embla}>
+    <div className={`${styles.embla} ${styles.embla__scroll}`}>
       <div className={styles.embla__viewport} ref={carouselRef} tabIndex="0">
         <div className={styles.embla__container}>
           {allFilesData.map(({ id, title, subtitle, image }) => (
@@ -94,7 +91,6 @@ function WorkCarousel({ allWorksData }) {
             <motion.div
               className={styles.embla__slideWork}
               key={id}
-              
               whileTap={{ scale: 0.95 }}
             >
               <Link key={id} className={styles.workPost} href={`/works/${id}`}>
@@ -198,9 +194,14 @@ export default function Home({ allFilesData, allWorksData }) {
             view all
           </Link>
         </section>
-        <section className={styles.works} style={{ overflowX: 'scroll'} }>
+        <section className={styles.works} style={{ overflowX: "scroll" }}>
           <h2 className={styles.headingBlog}>some of our amazing projects</h2>
           <WorkCarousel allWorksData={allWorksData} />
+        </section>
+        <section className={styles.footer}>
+          <h2 className={styles.footerHeading}>© Design and Development <br>
+          </br>
+           by Anna Baraulina, 2023</h2>
         </section>
       </div>
     </>
