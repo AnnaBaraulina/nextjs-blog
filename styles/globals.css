@@ -2,15 +2,11 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Heebo', sans-serif;
-  color: #000000;
+}
+/* font-family: 'Heebo', sans-serif;*/
   
-}
+  
 
-@font-face {
-  font-family: 'Heebo';
-  src: url('/public/fonts/Heebo-Black.ttf');
-}
 
 
 * {

@@ -38,6 +38,7 @@
 
 .embla__viewport {
   width: 100%;
+
 }
 
 .embla__container {
@@ -55,7 +56,7 @@
   flex-shrink: 0;
   width: 100%;
   max-width: 25rem;
-  padding-right: 5%;
+  padding-right: 3%;
   height: 50vh;
 
 }
@@ -107,9 +108,9 @@
 .projectName {
   margin: 0;
   align-self: flex-start;
-  font-size: 1.175rem;
-  line-height: 40px;
-  color: #8b6fb6;
+  font-size: 1.375rem;
+  line-height: 30px;
+
 }
 
 .works {
@@ -139,6 +140,7 @@
 
 .aLink {
   color: #000000;
+  text-decoration: none;
 }
 
 .titleCarousel {
@@ -183,15 +185,13 @@
 .footer {
   width: 100%;
   display: flex;
-  background-color: #eeeeee;
+ 
   color: black;
   height: 10%;
 }
 
 .footerHeading {
-  font-weight: 400;
-  font-size: 1.0rem;
-  line-height: 15px;
+  
   opacity: 0.5;
   margin-left: 2%;
 }

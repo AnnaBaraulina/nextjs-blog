@@ -62,12 +62,12 @@
 }
 
 .link {
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 29px;
+  font-weight: 400;
+  font-size: 1.375rem;
+  line-height: 30px;
   margin-right: 65px;
   color: #000000;
+  text-decoration: none!important;
 }
 
 .header {

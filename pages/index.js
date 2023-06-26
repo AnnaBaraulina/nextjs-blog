@@ -188,20 +188,19 @@ export default function Home({ allFilesData, allWorksData }) {
           </StaggerContainer>
         </section>
         <section className={styles.blog}>
-          <h2 className={styles.headingBlog}>recent posts</h2>
           <BlogCarousel allFilesData={allFilesData} />
           <Link className={styles.headingBlog} href={"/blog"}>
             view all
           </Link>
         </section>
         <section className={styles.works} style={{ overflowX: "scroll" }}>
-          <h2 className={styles.headingBlog}>some of our amazing projects</h2>
           <WorkCarousel allWorksData={allWorksData} />
         </section>
         <section className={styles.footer}>
-          <h2 className={styles.footerHeading}>© Design and Development <br>
-          </br>
-           by Anna Baraulina, 2023</h2>
+          <p className={styles.footerHeading}>
+            © Design and Development <br></br>
+            by Anna Baraulina, 2023
+          </p>
         </section>
       </div>
     </>
