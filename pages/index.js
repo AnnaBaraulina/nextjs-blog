@@ -12,6 +12,8 @@ import { getSortedWorksData } from "../lib/works";
 import Link from "next/link";
 import Head from "next/head";
 import layout from "../components/layout.module.css";
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
+
 
 export const siteTitle = "Dima Baraulin";
 
@@ -27,6 +29,65 @@ export async function getStaticProps() {
 }
 
 function BlogCarousel({ allFilesData }) {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+
+  const handlePrevious = () => {
+    emblaApi?.scrollPrev();
+  };
+  const handleNext = () => {
+    emblaApi?.scrollNext();
+  };
+
+  return (
+    <div className={styles.relative}>
+      <button
+        aria-label="go to previous slide"
+        onClick={handlePrevious}
+        className={styles.button}
+      >
+        <ChevronLeftIcon className={styles.icon}/>
+      </button>
+      <button
+        aria-label="go to next slide"
+        onClick={handleNext}
+        className={styles.button}
+      >
+        <ChevronRightIcon className={styles.icon} />
+      </button>
+
+      <div className={styles.embla} ref={emblaRef}>
+        <div className={styles.flex}>
+          <div className={styles.embla__container}>
+            {allFilesData.map(({ id, title, subtitle, image }) => (
+              <motion.div
+                className={styles.embla__slide}
+                key={id}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Link className={styles.linkPost} href={`/posts/${id}`}>
+                  <div className={styles.embla__slide__inner}>
+                    <h1 className={styles.titleCarousel}>{title}</h1>
+                    <br />
+                    <div className={styles.subtitleCarousel}>{subtitle}</div>
+                    <img
+                      src={image}
+                      alt={title}
+                      className={styles.embla__image}
+                    ></img>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+{
+  /*function BlogCarousel({ allFilesData }) {
   const carouselRef = useRef(null);
   const { embla } = useEmblaCarousel({ loop: true });
 
@@ -40,7 +101,7 @@ function BlogCarousel({ allFilesData }) {
   }, [embla]);
 
   return (
-    <div className={`${styles.embla} ${styles.embla__scroll}`}>
+    <div className={styles.embla}>
       <div className={styles.embla__viewport} ref={carouselRef} tabIndex="0">
         <div className={styles.embla__container}>
           {allFilesData.map(({ id, title, subtitle, image }) => (
@@ -68,6 +129,7 @@ function BlogCarousel({ allFilesData }) {
       </div>
     </div>
   );
+}*/
 }
 
 function WorkCarousel({ allWorksData }) {
