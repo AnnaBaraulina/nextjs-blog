@@ -14,7 +14,6 @@ import Head from "next/head";
 import layout from "../components/layout.module.css";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
 
-
 export const siteTitle = "Dima Baraulin";
 
 export async function getStaticProps() {
@@ -43,133 +42,87 @@ function BlogCarousel({ allFilesData }) {
       <button
         aria-label="go to previous slide"
         onClick={handlePrevious}
-        className={styles.button}
+        className={styles.buttonL}
       >
-        <ChevronLeftIcon className={styles.icon}/>
+        <ChevronLeftIcon className={styles.icon} />
       </button>
       <button
         aria-label="go to next slide"
         onClick={handleNext}
-        className={styles.button}
+        className={styles.buttonR}
       >
         <ChevronRightIcon className={styles.icon} />
       </button>
 
       <div className={styles.embla} ref={emblaRef}>
         <div className={styles.flex}>
+          {allFilesData.map(({ id, title, subtitle, image }) => (
+            <div key={id} className={styles.embla__slide}>
+              <Link className={styles.linkPost} href={`/posts/${id}`}>
+                <h1 className={styles.titleCarousel}>{title}</h1>
+                <br />
+                <div className={styles.subtitleCarousel}>{subtitle}</div>
+                <img
+                  src={image}
+                  alt={title}
+                  className={styles.embla__image}
+                ></img>
+              </Link>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function WorkCarousel({ allWorksData }) {
+  const carouselRef = useRef(null);
+  const { embla, emblaApi } = useEmblaCarousel({ loop: true });
+
+
+
+  useEffect(() => {
+    if (!embla) return;
+    const onResize = () => {
+      embla.reInit();
+    };
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, [embla]);
+
+  return (
+    <div className={styles.relative}>
+
+      <div className={styles.embla}>
+        <div className={styles.embla__viewport} ref={carouselRef} tabIndex="0">
           <div className={styles.embla__container}>
-            {allFilesData.map(({ id, title, subtitle, image }) => (
+            {allWorksData.map(({ id, title, video }) => (
               <motion.div
-                className={styles.embla__slide}
+                className={styles.embla__slideWork}
                 key={id}
-                whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Link className={styles.linkPost} href={`/posts/${id}`}>
-                  <div className={styles.embla__slide__inner}>
-                    <h1 className={styles.titleCarousel}>{title}</h1>
-                    <br />
-                    <div className={styles.subtitleCarousel}>{subtitle}</div>
-                    <img
-                      src={image}
-                      alt={title}
-                      className={styles.embla__image}
-                    ></img>
+                <Link
+                  key={id}
+                  className={styles.workPost}
+                  href={`/works/${id}`}
+                >
+                  <div className={styles.emblaWork__slide__inner}>
+                    <div className={styles.videoContainer}>
+                      <h1 className={styles.projectName}>{title}</h1>
+                      <iframe
+                        src={video}
+                        allow="autoplay; fullscreen; picture-in-picture"
+                        width="640"
+                        height="360"
+                      ></iframe>
+                    </div>
                   </div>
                 </Link>
               </motion.div>
             ))}
           </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-{
-  /*function BlogCarousel({ allFilesData }) {
-  const carouselRef = useRef(null);
-  const { embla } = useEmblaCarousel({ loop: true });
-
-  useEffect(() => {
-    if (!embla) return;
-    const onResize = () => {
-      embla.reInit();
-    };
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
-  }, [embla]);
-
-  return (
-    <div className={styles.embla}>
-      <div className={styles.embla__viewport} ref={carouselRef} tabIndex="0">
-        <div className={styles.embla__container}>
-          {allFilesData.map(({ id, title, subtitle, image }) => (
-            <motion.div
-              className={styles.embla__slide}
-              key={id}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Link className={styles.linkPost} href={`/posts/${id}`}>
-                <div className={styles.embla__slide__inner}>
-                  <h1 className={styles.titleCarousel}>{title}</h1>
-                  <br />
-                  <div className={styles.subtitleCarousel}>{subtitle}</div>
-                  <img
-                    src={image}
-                    alt={title}
-                    className={styles.embla__image}
-                  ></img>
-                </div>
-              </Link>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}*/
-}
-
-function WorkCarousel({ allWorksData }) {
-  const carouselRef = useRef(null);
-  const { embla } = useEmblaCarousel({ loop: true });
-
-  useEffect(() => {
-    if (!embla) return;
-    const onResize = () => {
-      embla.reInit();
-    };
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
-  }, [embla]);
-
-  return (
-    <div className={styles.embla}>
-      <div className={styles.embla__viewport} ref={carouselRef} tabIndex="0">
-        <div className={styles.embla__container}>
-          {allWorksData.map(({ id, title, video }) => (
-            <motion.div
-              className={styles.embla__slideWork}
-              key={id}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Link key={id} className={styles.workPost} href={`/works/${id}`}>
-                <div className={styles.emblaWork__slide__inner}>
-                  <div className={styles.videoContainer}>
-                    <h1 className={styles.projectName}>{title}</h1>
-                    <iframe
-                      src={video}
-                      allow="autoplay; fullscreen; picture-in-picture"
-                      width="640"
-                      height="360"
-                    ></iframe>
-                  </div>
-                </div>
-              </Link>
-            </motion.div>
-          ))}
         </div>
       </div>
     </div>
@@ -255,7 +208,7 @@ export default function Home({ allFilesData, allWorksData }) {
             view all
           </Link>
         </section>
-        <section className={styles.works} style={{ overflowX: "scroll" }}>
+        <section className={styles.works}>
           <WorkCarousel allWorksData={allWorksData} />
         </section>
         <section className={styles.footer}>

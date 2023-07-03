@@ -34,7 +34,6 @@
 .embla {
   position: relative;
   padding: 0;
-
   overflow: hidden;
 }
 
@@ -55,8 +54,8 @@
   justify-content: center;
   background-color: rgba(255, 255, 255, 0.4);
   position: absolute;
-  top: 50%;
-  left: 1rem;
+  top: 60%;
+  left: -10px;
   transform: translateY(-50%);
   z-index: 10;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
@@ -73,31 +72,21 @@
   justify-content: center;
   background-color: rgba(255, 255, 255, 0.4);
   position: absolute;
-  top: 50%;
-  right: 1rem;
+  top: 60%;
+  right: -10px;
   transform: translateY(-50%);
   z-index: 10;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
   color: black;
 }
 
+
 .icon {
   width: 1.25rem;
   height: 1.25rem;
 }
 
-.embla__viewport {
-  width: 100%;
-}
 
-.embla__container {
-  display: flex;
-  align-items: center;
-  will-change: transform;
-  flex-wrap: nowrap;
-  scroll-behavior: smooth;
-  height: 60vh;
-}
 
 .embla__slide {
   flex: 0 0 100%;
@@ -109,7 +98,7 @@
 }
 
 .embla__slideWork {
-  flex: 0 0 calc(85% / 5);
+  flex: 0 0 100%;
   flex-shrink: 0;
   margin: 0;
   padding: 0;
@@ -122,20 +111,6 @@
   padding: 2%;
 }
 
-.embla__slide__inner {
-  display: flex;
-  align-items: stretch;
-  flex-direction: column;
-  height: 100%;
-  justify-content: stretch;
-}
-
-.embla__slide__inner img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  align-self: flex-end;
-}
 
 .embla__image {
   max-width: 100%;
@@ -182,9 +157,17 @@
 .blog {
   display: flex;
   flex-wrap: wrap;
-  overflow-x: scroll;
   margin-bottom: 5%;
   position: relative;
+}
+
+.works {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  margin-bottom: 5%;
+
+  overflow-x: scroll;
 }
 
 .projectName {
@@ -194,13 +177,7 @@
   line-height: 30px;
 }
 
-.works {
-  display: flex;
-  flex-wrap: wrap;
-  overflow-x: scroll;
-  position: relative;
-  margin-bottom: 5%;
-}
+
 
 .headingBlog {
   font-family: "Heebo";
@@ -273,4 +250,33 @@
 .footerHeading {
   opacity: 0.5;
   margin-left: 2%;
+}
+
+
+.embla__viewport {
+  width: 100%;
+
+}
+
+.embla__container {
+  display: flex;
+  align-items: center;
+  will-change: transform;
+  flex-wrap: nowrap;
+  scroll-behavior: smooth;
+  height: 60vh;
+}
+
+.embla__slideWork {
+  flex: 0 0 calc(85% / 5);
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.emblaWork__slide__inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 2%;
 }
