@@ -55,7 +55,7 @@
   background-color: rgba(255, 255, 255, 0.4);
   position: absolute;
   top: 60%;
-  left: -10px;
+  left: -35px;
   transform: translateY(-50%);
   z-index: 10;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
@@ -73,7 +73,7 @@
   background-color: rgba(255, 255, 255, 0.4);
   position: absolute;
   top: 60%;
-  right: -10px;
+  right: -35px;
   transform: translateY(-50%);
   z-index: 10;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
@@ -118,41 +118,7 @@
   object-fit: cover;
 }
 
-.carouselButtonPrev {
-  background-image: url("../public//images/arr_left.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 40px;
-  height: 40px;
-  background-color: #fff;
-  border: 1px solid #000;
-  border-radius: 50%;
-  font-size: 20px;
-  cursor: pointer;
-}
 
-.carouselButtonNext {
-  background-image: url("../public//images/arr_right.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 40px;
-  height: 40px;
-  background-color: #fff;
-  border: 1px solid #000;
-  border-radius: 50%;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-.carouselButton:hover {
-  background-color: #f0f0f0;
-}
 
 .blog {
   display: flex;
@@ -166,8 +132,12 @@
   flex-wrap: wrap;
   position: relative;
   margin-bottom: 5%;
+}
 
-  overflow-x: scroll;
+.worksContainer {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .projectName {
@@ -228,6 +198,8 @@
   align-items: center;
   margin-bottom: 5%;
   text-decoration: none !important;
+  width: 90%;
+  
 }
 
 .videoContainer {
@@ -242,7 +214,6 @@
 .footer {
   width: 100%;
   display: flex;
-
   color: black;
   height: 10%;
 }

@@ -76,7 +76,8 @@ function BlogCarousel({ allFilesData }) {
   );
 }
 
-function WorkCarousel({ allWorksData }) {
+{
+  /*function WorkCarousel({ allWorksData }) {
   const carouselRef = useRef(null);
   const { embla, emblaApi } = useEmblaCarousel({ loop: true });
 
@@ -127,6 +128,7 @@ function WorkCarousel({ allWorksData }) {
       </div>
     </div>
   );
+}*/
 }
 
 export default function Home({ allFilesData, allWorksData }) {
@@ -209,7 +211,20 @@ export default function Home({ allFilesData, allWorksData }) {
           </Link>
         </section>
         <section className={styles.works}>
-          <WorkCarousel allWorksData={allWorksData} />
+          <div className={styles.worksContainer}>
+            {allWorksData.map(({ id, title, video }) => (
+              <Link key={id} className={styles.workPost} href={`/works/${id}`}>
+                <h1 className={styles.projectName}>{title}</h1>
+                <iframe
+                  src={video}
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  width='100%'
+                  height='360'
+                  border='none'
+                ></iframe>
+              </Link>
+            ))}
+          </div>
         </section>
         <section className={styles.footer}>
           <p className={styles.footerHeading}>
