@@ -138,6 +138,34 @@
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 2%;
+  
+}
+
+.workPost {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5%;
+  text-decoration: none !important;
+
+ 
+  
+}
+
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio (высота / ширина * 100%) */
+}
+
+.videoWrapper iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: none; /* Если хотите убрать границу у iframe, добавьте это свойство */
 }
 
 .projectName {
@@ -189,18 +217,7 @@
   margin-bottom: 2%;
 }
 
-.workPost {
-  color: inherit;
-  text-decoration: none;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 5%;
-  text-decoration: none !important;
-  width: 90%;
-  
-}
+
 
 .videoContainer {
   margin: auto;

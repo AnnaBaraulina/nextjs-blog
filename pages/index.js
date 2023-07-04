@@ -132,6 +132,10 @@ function BlogCarousel({ allFilesData }) {
 }
 
 export default function Home({ allFilesData, allWorksData }) {
+  const iframeStyle = {
+    border: 'none',
+  };
+
   const { scrollYProgress } = useScroll({
     offset: ["0hv", "50vh"],
   });
@@ -215,13 +219,15 @@ export default function Home({ allFilesData, allWorksData }) {
             {allWorksData.map(({ id, title, video }) => (
               <Link key={id} className={styles.workPost} href={`/works/${id}`}>
                 <h1 className={styles.projectName}>{title}</h1>
+             
                 <iframe
                   src={video}
                   allow="autoplay; fullscreen; picture-in-picture"
                   width='100%'
                   height='360'
-                  border='none'
+                  style={iframeStyle}
                 ></iframe>
+          
               </Link>
             ))}
           </div>
