@@ -27,7 +27,7 @@ export default function File({ fileData }) {
     <article className={styles.container}>
       <h1 className={utilStyles.headingXl}>{fileData.title}</h1>
       <div dangerouslySetInnerHTML={{ __html: fileData.contentHtml }} />
-      <img src={fileData.image} alt={fileData.title} />
+      <img className={styles.image} src={fileData.image} alt={fileData.title} />
 
       <Link className={styles.link} href={"/"}>
         HOME PAGE

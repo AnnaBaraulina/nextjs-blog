@@ -5,8 +5,6 @@ import StaggerContainer, {
   fadeInVariants,
 } from "../components/StraggerContainer";
 import useEmblaCarousel from "embla-carousel-react";
-import { useRef, useEffect } from "react";
-
 import { getSortedFilesData } from "../lib/posts";
 import { getSortedWorksData } from "../lib/works";
 import Link from "next/link";
@@ -161,7 +159,7 @@ export default function Home({ allFilesData, allWorksData }) {
       </Head>
       <div className={layout.container}>
         <header className={utilStyles.header}>
-          <Link className={utilStyles.link} href="#">
+          <Link className={utilStyles.link} href="/works">
             Works
           </Link>
           <Link className={utilStyles.link} href="/blog">

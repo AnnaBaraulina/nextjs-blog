@@ -94,7 +94,7 @@
   width: 100%;
   max-width: 25rem;
   padding-right: 3%;
-  height: 50vh;
+  height: auto;
 }
 
 .embla__slideWork {
@@ -149,7 +149,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 5%;
+  margin-bottom: 2%;
   text-decoration: none !important;
 
  

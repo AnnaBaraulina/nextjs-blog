@@ -2,7 +2,6 @@ import { getSortedFilesData } from "../lib/posts";
 import { getFilesData } from "../lib/posts";
 import utilStyles from "../styles/utils.module.css";
 import styles from '../styles/Blog.module.css';
-
 import Link from "next/link";
 
 export async function getStaticProps() {
@@ -20,7 +19,7 @@ export default function Blog({ filesData }) {
     <>
     <div className={styles.container}>
       <header className={utilStyles.header}>
-        <Link className={utilStyles.link} href="#">
+        <Link className={utilStyles.link} href="/works">
           Works
         </Link>
         <Link className={utilStyles.link} href="/blog">
@@ -49,10 +48,11 @@ export default function Blog({ filesData }) {
             </>
           );
         })}
-        <Link className={styles.linkHome} href={`/`}>
-          HOME PAGE
-        </Link>
+        
       </div>
+      <Link className={styles.linkHome} href={`/`}>
+          home page
+        </Link>
       </div>
     </>
   );
