@@ -1,51 +1,73 @@
 .container {
-    max-width: 70rem;
-    margin: 0 auto 0 auto;
+  max-width: 70rem;
+  padding: 0 1rem;
+  margin: 3rem auto 6rem;
+  font-family: "Heebo";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
 }
 
 .linkHome {
-    margin-top: 120px;
-  }
-
-.containerItem {
-    
+  margin-top: 120px;
 }
+
+.overlay::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+}
+
+.workTitle {
   
+  color: black;
+  font-family: "Heebo";
+  font-style: normal;
+  margin-bottom: 5%;
+  margin-top: 7%;
   
-  .item {
-    width: 100%;
-    height: 360px;
-    
-  }
-  
-  .item1 {
-    margin-left: 20%; 
-    margin-bottom: 2%;
-  }
-  
+}
 
-  .item2 {
-    margin-left: -13%; 
-    margin-bottom: 3%;
-  }
+.workLink {
+  text-decoration: none!important;
+}
 
-  .item3 {
-    margin-left: 10%; 
-    margin-bottom: 2%;
-  }
+.item {
+  width: 100%;
+  height: 360px;
+}
 
-  .item4 {
-    margin-left: -10%; 
-    margin-bottom: 5%;
-  }
+.item1 {
+  margin-left: 20%;
+  margin-bottom: 2%;
+}
 
-  .item5 {
-    margin-left: 5%; 
-    margin-bottom: 2%;
-  }
+.item2 {
+  margin-left: -13%;
+  margin-bottom: 3%;
+}
 
-  .item6 {
-    margin-left: -20%; 
-  }
+.item3 {
+  margin-left: 10%;
+  margin-bottom: 2%;
+}
 
- 
+.item4 {
+  margin-left: -10%;
+  margin-bottom: 5%;
+}
+
+.item5 {
+  margin-left: 5%;
+  margin-bottom: 2%;
+}
+
+.item6 {
+  margin-left: -20%;
+}

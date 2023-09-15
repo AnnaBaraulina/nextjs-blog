@@ -38,10 +38,11 @@ export default function Works({ worksData }) {
         </header>
         <div className={styles.containerItem}>
           {/*<h1 className={styles.heading}>WORKS</h1>*/}
-          {worksData.map(({ id, video }, index) => {
+          {worksData.map(({ id, video, title }, index) => {
             return (
-              <React.Fragment key={id}>
-                <div className={`${styles.item} ${styles[`item${index + 1}`]}`}>
+              <Link className={styles.workLink} href={`/works/${id}`} key={id}>
+                <h3 className={styles.workTitle}>{title}</h3>
+                <div className={`${styles.item} ${styles[`item${index + 1}`]} overlay`}>
                   <iframe
                     src={video}
                     allow="autoplay; fullscreen; picture-in-picture"
@@ -50,8 +51,7 @@ export default function Works({ worksData }) {
                     style={iframeStyle}
                   ></iframe>
                 </div>
-                
-              </React.Fragment>
+              </Link>
             );
           })}
         </div>
