@@ -4,6 +4,7 @@ import styles from "../styles/Works.module.css";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 import React from "react";
+import layout from "../components/layout.module.css";
 
 export async function getStaticProps() {
   const allWorksData = getSortedWorksData().map(({ id }) => getWorksData(id));
@@ -21,9 +22,12 @@ export default function Works({ worksData }) {
   };
   return (
     <>
-      <div className={styles.container}>
+      <div className={layout.container}>
         <header className={utilStyles.header}>
-          <Link className={utilStyles.link} href="#">
+          <Link className={utilStyles.link} href="/">
+            Home
+          </Link>
+          <Link className={utilStyles.link} href="/works">
             Works
           </Link>
           <Link className={utilStyles.link} href="/blog">
@@ -42,7 +46,11 @@ export default function Works({ worksData }) {
             return (
               <Link className={styles.workLink} href={`/works/${id}`} key={id}>
                 <h3 className={styles.workTitle}>{title}</h3>
-                <div className={`${styles.item} ${styles[`item${index + 1}`]} overlay`}>
+                <div
+                  className={`${styles.item} ${
+                    styles[`item${index + 1}`]
+                  } overlay`}
+                >
                   <iframe
                     src={video}
                     allow="autoplay; fullscreen; picture-in-picture"

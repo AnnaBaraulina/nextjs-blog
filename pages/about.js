@@ -1,17 +1,18 @@
 import Link from "next/link";
-import styles from '../styles/About.module.css';
+import styles from "../styles/About.module.css";
 import homeStyles from "../styles/Home.module.css";
-import utilStyles from '../styles/utils.module.css';
-
-
-
+import utilStyles from "../styles/utils.module.css";
+import layout from "../components/layout.module.css";
 
 export default function About() {
   return (
     <>
-      <div className={styles.container}>
+      <div className={layout.container}>
         <header className={utilStyles.header}>
-          <Link className={utilStyles.link} href="#">
+          <Link className={utilStyles.link} href="/">
+            Home
+          </Link>
+          <Link className={utilStyles.link} href="/works">
             Works
           </Link>
           <Link className={utilStyles.link} href="/blog">
@@ -48,60 +49,46 @@ export default function About() {
           </p>
           <h2 className={styles.summary}>Experience</h2>
           <div className={styles.experienceContainer}>
-            <img
-              className={styles.logo}
-              src={"/images/endless.png"}
-            ></img>
+            <img className={styles.logo} src={"/images/endless.png"}></img>
             <div className={styles.experience}>
               <p className={styles.info}>Co-founder & Head of production</p>
               <p className={styles.info}>Endless Work</p>
               <p className={styles.info}>Jan 2022 - Present</p>
             </div>
-          
           </div>
           <div className={styles.experienceContainer}>
-            <img
-              className={styles.logo}
-              src={"/images/wrs.png"}
-            ></img>
+            <img className={styles.logo} src={"/images/wrs.png"}></img>
             <div className={styles.experience}>
               <p className={styles.info}>Co-founder & Motion Director</p>
               <p className={styles.info}>WRS Design</p>
               <p className={styles.info}>Jan 2013 - Present</p>
             </div>
-          
           </div>
           <div className={styles.experienceContainer}>
-            <img
-              className={styles.logo}
-              src={"/images/circle.png"}
-            ></img>
+            <img className={styles.logo} src={"/images/circle.png"}></img>
             <div className={styles.experience}>
               <p className={styles.info}>3D Designer</p>
               <p className={styles.info}>COLORS AND THE KIDS</p>
               <p className={styles.info}>Jan 2015-2015</p>
             </div>
-          
           </div>
           <div className={styles.experienceContainer}>
-            <img
-              className={styles.logo}
-              src={"/images/circle.png"}
-            ></img>
+            <img className={styles.logo} src={"/images/circle.png"}></img>
             <div className={styles.experience}>
               <p className={styles.info}>Freelance 3D Artist</p>
               <p className={styles.info}>Freelance</p>
               <p className={styles.info}>2005 - 2015</p>
             </div>
-          
           </div>
           <h2 className={styles.summary}>Education</h2>
           <div>
-            <p>Moscow Institute of Electronics and Mathematics
-            <br/>
-            Bachelor's Degree, Broadcast Design
-            <br/>
-            2005 - 2011</p>
+            <p>
+              Moscow Institute of Electronics and Mathematics
+              <br />
+              Bachelor's Degree, Broadcast Design
+              <br />
+              2005 - 2011
+            </p>
           </div>
         </div>
       </div>

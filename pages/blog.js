@@ -1,8 +1,9 @@
 import { getSortedFilesData } from "../lib/posts";
 import { getFilesData } from "../lib/posts";
 import utilStyles from "../styles/utils.module.css";
-import styles from '../styles/Blog.module.css';
+import styles from "../styles/Blog.module.css";
 import Link from "next/link";
+import layout from "../components/layout.module.css";
 
 export async function getStaticProps() {
   const allFilesData = getSortedFilesData().map(({ id }) => getFilesData(id));
@@ -17,42 +18,41 @@ export async function getStaticProps() {
 export default function Blog({ filesData }) {
   return (
     <>
-    <div className={styles.container}>
-      <header className={utilStyles.header}>
-        <Link className={utilStyles.link} href="/works">
-          Works
-        </Link>
-        <Link className={utilStyles.link} href="/blog">
-          Blog
-        </Link>
-        <Link className={utilStyles.link} href="/contact">
-          Contact
-        </Link>
-        <Link className={utilStyles.link} href="/about">
-          About
-        </Link>
-      </header>
-      <div className={styles.containerItem}>
-        <h1 className={styles.heading}>BLOG</h1>
-        {filesData.map(({ id, title, subtitle }) => {
-          return (
-            <>
-              <div className={styles.item} key={id}>
-                <div className={styles.title}>{title}</div>
-                <div className={styles.subtitle}>{subtitle}</div>
+      <div className={layout.container}>
+        <header className={utilStyles.header}>
+          <Link className={utilStyles.link} href="/">
+            Home
+          </Link>
+          <Link className={utilStyles.link} href="/works">
+            Works
+          </Link>
+          <Link className={utilStyles.link} href="/blog">
+            Blog
+          </Link>
+          <Link className={utilStyles.link} href="/contact">
+            Contact
+          </Link>
+          <Link className={utilStyles.link} href="/about">
+            About
+          </Link>
+        </header>
+        <div className={styles.containerItem}>
+          <h1 className={styles.heading}>BLOG</h1>
+          {filesData.map(({ id, title, subtitle }) => {
+            return (
+              <>
+                <div className={styles.item} key={id}>
+                  <div className={styles.title}>{title}</div>
+                  <div className={styles.subtitle}>{subtitle}</div>
 
-                <Link className={styles.linkBlog} href={`/posts/${id}`}>
-                  read more
-                </Link>
-              </div>
-            </>
-          );
-        })}
-        
-      </div>
-      <Link className={styles.linkHome} href={`/`}>
-          home page
-        </Link>
+                  <Link className={styles.linkBlog} href={`/posts/${id}`}>
+                    read more
+                  </Link>
+                </div>
+              </>
+            );
+          })}
+        </div>
       </div>
     </>
   );
