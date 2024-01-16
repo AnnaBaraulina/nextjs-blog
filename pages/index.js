@@ -61,6 +61,7 @@ function BlogCarousel({ allFilesData }) {
                 <br />
                 <div className={styles.subtitleCarousel}>{subtitle}</div>
                 <img
+                 
                   src={image}
                   alt={title}
                   className={styles.embla__image}
