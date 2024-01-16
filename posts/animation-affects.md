@@ -1,6 +1,6 @@
 ---
-title: 'COSTAPALOR — A healthy, world-worthy pasta alternative.'
-subtitle: 'Let’s be honest, pasta is something that we all love, and if you say don’t — you’re lying. Granted, when it comes to pasta, there’s always that one subsequent feeling we’re always left with afterwards, and that feeling is guilt.'
+title: 'Costapalor — a healthy, world-worthy pasta alternative.'
+subtitle: 'Let’s be honest, pasta is something that we all love, and if you say don’t — you’re lying.'
 date: '2023-01-01'
 image: '/images/costap.png'
 ---
