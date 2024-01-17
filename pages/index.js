@@ -75,61 +75,6 @@ function BlogCarousel({ allFilesData }) {
   );
 }
 
-{
-  /*function WorkCarousel({ allWorksData }) {
-  const carouselRef = useRef(null);
-  const { embla, emblaApi } = useEmblaCarousel({ loop: true });
-
-
-
-  useEffect(() => {
-    if (!embla) return;
-    const onResize = () => {
-      embla.reInit();
-    };
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
-  }, [embla]);
-
-  return (
-    <div className={styles.relative}>
-
-      <div className={styles.embla}>
-        <div className={styles.embla__viewport} ref={carouselRef} tabIndex="0">
-          <div className={styles.embla__container}>
-            {allWorksData.map(({ id, title, video }) => (
-              <motion.div
-                className={styles.embla__slideWork}
-                key={id}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Link
-                  key={id}
-                  className={styles.workPost}
-                  href={`/works/${id}`}
-                >
-                  <div className={styles.emblaWork__slide__inner}>
-                    <div className={styles.videoContainer}>
-                      <h1 className={styles.projectName}>{title}</h1>
-                      <iframe
-                        src={video}
-                        allow="autoplay; fullscreen; picture-in-picture"
-                        width="640"
-                        height="360"
-                      ></iframe>
-                    </div>
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}*/
-}
-
 export default function Home({ allFilesData, allWorksData }) {
   const iframeStyle = {
     border: "none",
@@ -197,14 +142,8 @@ export default function Home({ allFilesData, allWorksData }) {
                   </a>
                 </h1>
                 <p className={styles.description}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                  cupidatat non proident, sunt in culpa qui officia deserunt
-                  mollit anim id est laborum.
+                I've been working through computer arts, studio films, personal projects, music videos, etc.
+From WRS to Endless Tools, I've led teams, immersed myself in studio life, and built computer graphics production pipelines. My passion lies between visuals and music.
                 </p>
               </div>
             </motion.div>

@@ -1,11 +1,11 @@
 import Link from "next/link";
 import utilStyles from "../styles/utils.module.css";
 import styles from "../styles/Contacts.module.css";
-
+import layout from '../components/layout.module.css';
 export default function Contact() {
   return (
     <>
-      <div className={styles.container}>
+      <div className={layout.container}>
         <header className={utilStyles.header}>
           <Link className={utilStyles.link} href="/">
             Home

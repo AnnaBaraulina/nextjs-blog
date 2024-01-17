@@ -41,7 +41,6 @@ export default function Works({ worksData }) {
           </Link>
         </header>
         <div className={styles.containerItem}>
-          {/*<h1 className={styles.heading}>WORKS</h1>*/}
           {worksData.map(({ id, video, title }, index) => {
             return (
               <Link className={styles.workLink} href={`/works/${id}`} key={id}>
